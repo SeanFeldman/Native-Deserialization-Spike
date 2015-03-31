@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AzureTransportConfig.cs" />
+    <Compile Include="FLR.cs" />
     <Compile Include="NativeIntegrationMessageHandler.cs" />
     <Compile Include="Feature\NativeIntegrationWithJson.cs" />
     <Compile Include="Feature\NativeIntegrationWithJsonTypeProviderBehavior.cs" />
