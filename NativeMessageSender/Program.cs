@@ -17,7 +17,10 @@ namespace NativeMessageSender
 
             while (Console.ReadKey(true).Key != ConsoleKey.Escape)
             {
-                var message = new CloudQueueMessage(@"{'$type':'NativeIntegrationMessage', 'Text': 'native msg @ " + DateTime.Now.ToString("HH:mm:ss") + "'}");
+                // JSON.NET
+                var message = new CloudQueueMessage(@"{'$type':'Messages.NativeIntegrationMessage', 'Text': 'native msg @ " + DateTime.Now.ToString("HH:mm:ss") + "'}");
+                // XML
+                //var message = new CloudQueueMessage(@"<Messages.NativeIntegrationMessage><Text>hello from linqpad " + DateTime.Now.ToString("HH:mm:ss") + "</Text></Messages.NativeIntegrationMessage>");
                 queue.AddMessage(message);
                 Console.WriteLine("TestIt message added to queue " + client.StorageUri.PrimaryUri);
             }
