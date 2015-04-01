@@ -21,6 +21,10 @@ namespace SenderReceiver
             var defaultLogFactory = LogManager.Use<DefaultFactory>();
             defaultLogFactory.Level(LogLevel.Debug);
             defaultLogFactory.Directory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+
+            // Default: JSON.NET
+            // XML
+            //configuration.UseSerialization<XmlSerializer>();
         }
     }
 }
