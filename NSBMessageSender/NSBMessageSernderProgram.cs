@@ -28,6 +28,9 @@ namespace NSBMessageSender
             var defaultLogFactory = LogManager.Use<DefaultFactory>();
             defaultLogFactory.Directory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
 
+            // Default: JSON.NET
+            // XML
+            //config.UseSerialization<XmlSerializer>();
 
             var bus = Bus.Create(config).Start();
 
